@@ -44,41 +44,41 @@ export default function Home() {
 
   return (
     <div className='w-full'>
-      <div className='flex flex-col items-center justify-center mt-40 text-center'>
+      <div className='flex flex-col items-center justify-center w-2/3 mx-auto mt-40 text-center'>
         <h1 className='text-6xl'>Hi there, I am 🤖</h1>
-      </div>
 
-      <div className="my-12">
-        <p className="mb-6 font-bold">Please type your prompt</p>
-        <input placeholder="Type Here" className="w-full max-w-xs input input-bordered input-secondary" value={value} onChange={handleInput} onKeyDown={handleKeyDown} />
-        <button className="mt-6 btn btn-primary btn-xs" onClick={handleRefresh}>New Conversation</button>
-        <div className="textarea">
-          {conversation.map((item, index) => (
-            <React.Fragment key={index}>
-              <br />
-              {item.role === 'assistant'} ? (
-              <div className="chat chat-end">
-                <div className="chat-bubble chat-bubble-secondary">
-                  <strong className="badge badge-primary">AVA</strong>
-                  <br />
-                  {item.content}
-                </div>
-              </div>
-              ) : (
-              <div className="chat chat-start">
-                <div className="chat-bubble chat-bubble-primary">
-                  <strong className="badge badge-primary">User</strong>
-                  <br />
-                  {item.content}
-                </div>
-              </div>
-              )
-            </React.Fragment>
-          ))}
 
+        <div className="my-12">
+          <p className="mb-6 font-bold">Please type your prompt</p>
+          <input placeholder="Type Here" className="w-full max-w-xs input input-bordered input-secondary" value={value} onChange={handleInput} onKeyDown={handleKeyDown} />
+          <button className="mt-6 btn btn-primary btn-xs" onClick={handleRefresh}>New Conversation</button>
+          <div className="textarea">
+            {conversation.map((item, index) => (
+              <React.Fragment key={index}>
+                <br />
+                {item.role === 'assistant'} ? (
+                <div className="chat chat-end">
+                  <div className="chat-bubble chat-bubble-secondary">
+                    <strong className="badge badge-primary">AVA</strong>
+                    <br />
+                    {item.content}
+                  </div>
+                </div>
+                ) : (
+                <div className="chat chat-start">
+                  <div className="chat-bubble chat-bubble-primary">
+                    <strong className="badge badge-primary">User</strong>
+                    <br />
+                    {item.content}
+                  </div>
+                </div>
+                )
+              </React.Fragment>
+            ))}
+
+          </div>
         </div>
       </div>
-
 
     </div>
   )
