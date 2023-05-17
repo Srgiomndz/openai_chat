@@ -36,7 +36,11 @@ export default function Home() {
     }
   }
 
-
+  const handleRefresh = () => {
+    inputRef.current?.focus()
+    setValue('')
+    setConversation([])
+  }
 
   return (
     <div className='w-full'>
@@ -47,6 +51,7 @@ export default function Home() {
       <div className="my-12">
         <p className="mb-6 font-bold">Please type your prompt</p>
         <input placeholder="Type Here" className="w-full max-w-xs input input-bordered input-secondary" value={value} onChange={handleInput} onKeyDown={handleKeyDown} />
+        <button className="mt-6 btn btn-primary btn-xs" onClick={handleRefresh}>New Conversation</button>
         <div className="textarea">
           {conversation.map((item, index) => (
             <React.Fragment key={index}>
