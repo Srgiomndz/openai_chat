@@ -50,13 +50,13 @@ export default function Home() {
 
         <div className="my-12">
           <p className="mb-6 font-bold">Please type your prompt</p>
-          <input placeholder="Type Here" className="w-full max-w-xs input input-bordered input-secondary" value={value} onChange={handleInput} onKeyDown={handleKeyDown} />
+          <input placeholder="Type Here" className="w-full input input-bordered input-secondary" value={value} onChange={handleInput} onKeyDown={handleKeyDown} />
           <button className="mt-6 btn btn-primary btn-xs" onClick={handleRefresh}>New Conversation</button>
           <div className="textarea">
             {conversation.map((item, index) => (
               <React.Fragment key={index}>
                 <br />
-                {item.role === 'assistant'} ? (
+                {item.role === 'assistant' ? (
                 <div className="chat chat-end">
                   <div className="chat-bubble chat-bubble-secondary">
                     <strong className="badge badge-primary">AVA</strong>
@@ -67,12 +67,12 @@ export default function Home() {
                 ) : (
                 <div className="chat chat-start">
                   <div className="chat-bubble chat-bubble-primary">
-                    <strong className="badge badge-primary">User</strong>
+                    <strong className="badge badge-secondary ">User</strong>
                     <br />
                     {item.content}
                   </div>
                 </div>
-                )
+                )}
               </React.Fragment>
             ))}
 
